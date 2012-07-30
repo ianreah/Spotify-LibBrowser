@@ -1,0 +1,54 @@
+#controls {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+#controls span {
+	display: block;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	background-color: rgba(33,33,33,0.5);
+	width: 50%;
+	height: 17px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #666;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-image: url('../images/slider-thumb.png');
+	-webkit-border-radius: 10px;
+	width: 30px;
+	height: 17px;
+}
+
+#controls .leftRightButton {
+	background-image:url('../images/left-right-sprite.png');
+	width: 35px;
+	height: 25px;
+	display: inline-block;
+	position: relative;
+	top: 3px;
+}
+
+#controls .leftButton {
+	background-position: 0px -35px;
+	left: 13px;
+}
+
+#controls .leftButton:active {
+	background-position: 0px -70px;
+}
+
+#controls .rightButton {
+	background-position: 0px -140px;
+	left: -13px;
+}
+
+#controls .rightButton:active {
+	background-position: 0px -175px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Spotify Library Browser</title>
+	<link rel="stylesheet" href="sp://import/css/adam.css" />
+	<link rel="stylesheet" href="styles/master.css" />
+	<link rel="stylesheet" href="styles/brand.css" />
+	<link rel="stylesheet" href="styles/content.css" />
+	<link rel="stylesheet" href="styles/controls.css" />
+</head>
+
+<body onload="sp = getSpotifyApi(1); library = sp.require('scripts/library'); library.init();">
+		
+	<div class="branding">
+		<!-- TODO: Some branding! -->
+	</div>
+	
+	<div id="content" class="animated" data-bind="style: {width: requiredWidth() + 'px', webkitTransformOrigin: 'top left', webkitTransform: 'scale(' + currentZoom() + ') translateX(' + currentPosition() + 'px)'}">
+		<ul id="albumList" data-bind="template: {name: 'albumTemplate', foreach: albums}"></ul>
+	</div>
+	
+	<div id="controls">
+		<span data-bind="html: currentArtist"></span>
+		<span data-bind="html: currentAlbumName"></span>
+		<span class="leftRightButton leftButton" data-bind="{event: {mousedown: previousAlbumRepeat, mouseup: cancelRepeat, mouseout: cancelRepeat}}"></span>
+		<input type="range" min="0" data-bind="{value: selectedIndex, rangeMax: albums().length-1}"/>
+		<span class="leftRightButton rightButton" data-bind="{event: {mousedown: nextAlbumRepeat, mouseup: cancelRepeat, mouseout: cancelRepeat}}"></span>
+	</div>
+</body>
+
+<script type='text/javascript' src='scripts/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='scripts/jquery.tmpl.js'></script>
+<script type='text/javascript' src='scripts/knockout-2.0.0.js'></script>
+
+<script type="text/x-jquery-tmpl" id="albumTemplate">
+    <li class="animated item">
+		<a data-bind="attr: {href: uri}">
+			<img data-bind="attr: {src: cover}">
+		</a>
+		
+		<span data-bind="{click: playPause, attr: {class: playButtonClass}}"/>
+	</li>
+</script>
+
+</html>

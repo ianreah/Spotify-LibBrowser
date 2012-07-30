@@ -1,0 +1,7 @@
+{
+	"BundleType": "Application",
+	"BundleIdentifier": "libbrowser",
+	"AppName": {
+		"en": "LibBrowser"
+	}
+}

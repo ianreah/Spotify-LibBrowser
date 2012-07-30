@@ -1,0 +1,108 @@
+#content {
+	margin-top: 25px;
+}
+
+#content li {
+	display: inline-block;
+	position: relative;
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent),  to(rgba(255,255,255,0.4)));
+}
+
+#content li .playButton {
+	background-image:url('../images/play-sprite.png');
+	width: 65px;
+	height: 65px;
+	position: absolute;
+	display: inline-block;
+	top: 225px;
+	left: 225px;
+}
+
+#content li .play {
+	display:none;
+}
+
+#content li:hover .play {
+	display: inline-block;
+	background-position: 0px -225px;
+}
+
+#content li:hover .play:hover {
+	display: inline-block;
+	background-position: 0px -300px;
+}
+
+#content li:hover .play:active {
+	display: inline-block;
+	background-position: 0px -375px;
+}
+
+#content li .pause {
+	background-position: 0px -525px;
+}
+
+#content li:hover .pause {
+	background-position: 0px 0px;
+}
+
+#content li:hover .pause:hover {
+	background-position: 0px -75px;
+}
+
+#content li:hover .pause:active {
+	background-position: 0px -150px;
+}
+
+#content li .resume {
+	background-position: 0px -450px;
+}
+
+#content li:hover .resume {
+	background-position: 0px -225px;
+}
+
+#content li:hover .resume:hover {
+	background-position: 0px -300px;
+}
+
+#content li:hover .resume:active {
+	background-position: 0px -375px;
+}
+
+/* This centers album covers that aren't square */
+/* TODO: If it's height is the shorter side it should probably be */
+/* aligned to the bottom so it's not floating above it's reflection!? */
+#content img {
+	display: block;
+	margin: auto;
+}
+
+.item {
+	width: 300px;
+	height: 300px;
+}
+
+.animated {
+	-webkit-transition: all 0.5s;
+}
+
+/* scale & shuffle all items to the left of the active item */
+#albumList > li {
+	-webkit-transform: scale(0.5);
+	opacity: 0.5;
+	margin: 0px 0px 0px -100px;
+}
+
+/* The active item */
+#albumList > .active {
+	-webkit-transform: scale(1);
+	opacity: 1;
+	margin: 0px;
+}
+
+/* scale & shuffle all items to the right of the active item */
+#albumList > .active ~ * {
+	-webkit-transform: scale(0.5);
+	opacity: 0.5;
+	margin: 0px -100px 0px 0px;
+}
