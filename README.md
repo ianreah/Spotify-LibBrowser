@@ -7,5 +7,3 @@ Implemented with the Model-View-View Model (MVVM) pattern using [knockoutjs](htt
 
 How to [load the app into Spotify](https://github.com/ianreah/Spotify-LibBrowser/wiki/Loading-the-app-into-Spotify)
 How to [use the app](https://github.com/ianreah/Spotify-LibBrowser/wiki/Use)
-
-TO DO...more...
