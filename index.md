@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Spotify-LibBrowser
 project_url: https://github.com/ianreah/Spotify-LibBrowser
 ---
