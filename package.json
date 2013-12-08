@@ -6,5 +6,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ianreah/Spotify-LibBrowser.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
   }
 }
