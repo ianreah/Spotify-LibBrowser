@@ -1,0 +1,10 @@
+{
+  "name": "Spotify-LibBrowser",
+  "version": "0.1.0",
+  "description": "A coverflow(-ish) Spotify App for browsing through the albums in your Spotify library.",
+  "author": "Ian Reah",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianreah/Spotify-LibBrowser.git"
+  }
+}
