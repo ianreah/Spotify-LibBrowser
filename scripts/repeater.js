@@ -18,20 +18,20 @@ var minimumRate = 5;
  * @param action
  */
 function start(action) {
-	
-	var repeat = function() {
-		action();
-		timeoutId = setTimeout(repeat, currentRate);
-		currentRate = Math.max(currentRate * acceleration, minimumRate);
-	};
-	
-	repeat();
+    
+    var repeat = function() {
+        action();
+        timeoutId = setTimeout(repeat, currentRate);
+        currentRate = Math.max(currentRate * acceleration, minimumRate);
+    };
+    
+    repeat();
 };
 
 /**
  * Stop repeating
  */
 function stop() {
-	clearTimeout(timeoutId);
-	currentRate = initialRate;
+    clearTimeout(timeoutId);
+    currentRate = initialRate;
 };
