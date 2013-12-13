@@ -218,13 +218,13 @@ ViewModel.prototype.jumpToArtistByInitial = function(initial) {
     
     // Either nothing was found above or the current artist starts with a different initial...
     // ...either way, just look for the FIRST artist with the given initial.
-    if(foundAlbum == null) {
+    if(foundAlbum === null) {
         foundAlbum = ko.utils.arrayFirst(this.albums(), function(album) {
             return ko.utils.stringStartsWith(album.artist().sortable().toUpperCase(), initial.toUpperCase());
         });
     }
     
-    if(foundAlbum != null) {
+    if(foundAlbum !== null) {
         this.selectedIndex(foundAlbum.index());
     }
 };
@@ -239,7 +239,7 @@ ViewModel.prototype.nextArtist = function() {
         return album.artist().sortable().localeCompare(currentArtist) > 0;
     });
     
-    if(foundAlbum != null) {
+    if(foundAlbum !== null) {
         this.selectedIndex(foundAlbum.index());
     }
 };
@@ -254,11 +254,11 @@ ViewModel.prototype.previousArtist = function() {
         return album.artist().sortable().localeCompare(currentArtist) < 0;
     });
     
-    if(foundAlbum != null) {
+    if(foundAlbum !== null) {
         // Found the 'last' album of the previous artist...
         // ...now need to find the 'first' album of that artist!
         foundAlbum = ko.utils.arrayFirst(this.albums(), function(album) {
-            return album.artist().sortable().localeCompare(foundAlbum.artist().sortable()) == 0;
+            return album.artist().sortable().localeCompare(foundAlbum.artist().sortable()) === 0;
         });
         
         this.selectedIndex(foundAlbum.index());
