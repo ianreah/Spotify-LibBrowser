@@ -38,16 +38,13 @@ function Album(spotifyAlbum) {
         {
             case PlayStates.NONE:
                 return "playButton play";
-                break;
                 
             case PlayStates.PLAYING:
                 return "playButton pause";
-                break;
                 
             case PlayStates.PAUSED:
                 return "playButton resume";
-                break;
-        };
+        }
     }, this);
 }
 
@@ -68,7 +65,7 @@ Album.prototype.playPause = function() {
         case PlayStates.PAUSED:
             sp.trackPlayer.setIsPlaying(true);
             break;
-    };
+    }
 };
 
 /**

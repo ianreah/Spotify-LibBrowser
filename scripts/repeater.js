@@ -26,7 +26,7 @@ function start(action) {
     };
     
     repeat();
-};
+}
 
 /**
  * Stop repeating
@@ -34,4 +34,4 @@ function start(action) {
 function stop() {
     clearTimeout(timeoutId);
     currentRate = initialRate;
-};
+}

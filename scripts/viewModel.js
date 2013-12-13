@@ -211,8 +211,8 @@ ViewModel.prototype.jumpToArtistByInitial = function(initial) {
     // with the initial that comes AFTER the current artist...
     if(currentArtistStartsWithInitial === true) {
         foundAlbum = ko.utils.arrayFirst(this.albums(), function(album) {
-            return ko.utils.stringStartsWith(album.artist().sortable().toUpperCase(), initial.toUpperCase())
-                && album.artist().sortable().localeCompare(currentArtist) > 0;
+            return ko.utils.stringStartsWith(album.artist().sortable().toUpperCase(), initial.toUpperCase()) &&
+                album.artist().sortable().localeCompare(currentArtist) > 0;
         });
     }
     
@@ -282,4 +282,4 @@ function updateActiveContainer(newValue, viewModel) {
         albumListItems.eq(newValue).addClass('active');
         viewModel.oldSelectedIndex = newValue;
     }	
-};
+}
