@@ -24,6 +24,12 @@ module.exports = function(grunt) {
         vendor: ['scripts/knockout-2.0.0.js']
       }
     },
+    clean: {
+      src: ['<%= getSpotifyFolder() %>'],
+      options: {
+          force: true
+      }
+    },
     copy: {
       main: {
         src: ['manifest.json', 'index.html', 'images/*', 'scripts/*', 'styles/*'],
@@ -32,14 +38,15 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['**/*.js'],
-      tasks: ['jshint', 'jasmine', 'copy']
+      tasks: ['jshint', 'jasmine', 'clean', 'copy']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint', 'jasmine', 'copy', 'watch']);
+  grunt.registerTask('default', ['jshint', 'jasmine', 'clean', 'copy', 'watch']);
 };
