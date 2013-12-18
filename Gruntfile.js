@@ -31,8 +31,15 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['**/*.js'],
-      tasks: ['jshint', 'jasmine', 'copy']
+      default: {
+        files: ['Gruntfile.js', 'scripts/**/*.js', 'specs/**/*.js'],
+        tasks: ['jshint', 'jasmine']
+      },
+      deploy: {
+        files: ['Gruntfile.js', 'scripts/**/*.js', 'specs/**/*.js'],
+        tasks: ['jshint', 'jasmine', 'copy']
+      }
+
     }
   });
 
@@ -41,5 +48,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint', 'jasmine', 'copy', 'watch']);
+  grunt.registerTask('default', ['jshint', 'jasmine', 'watch:default']);
+  grunt.registerTask('deploy', ['jshint', 'jasmine', 'copy', 'watch:deploy']);
 };
