@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/ianreah/Spotify-LibBrowser.git"
   },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",
