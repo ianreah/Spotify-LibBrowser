@@ -5,6 +5,9 @@
 #content li {
 	display: inline-block;
 	position: relative;
+}
+
+#content li img {
 	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent),  to(rgba(255,255,255,0.4)));
 }
 
